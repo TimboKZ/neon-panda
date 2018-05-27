@@ -8,6 +8,29 @@ Prism.plugins.autoloader.languages_path = '/assets/js/prism/components/';
 
 $(document).ready(function () {
 
+    // Load the scripts and execute functions
+    // defined in the post body
+    var loadScripts = function (array, accumulator) {
+        if (!accumulator) {
+            accumulator = 0;
+        }
+        if (accumulator === array.length) {
+            return;
+        }
+        var script = array[accumulator];
+        if (typeof script === 'function') {
+            script($);
+            loadScripts(array, ++accumulator);
+        } else if (typeof script === 'string') {
+            $.getScript(script, function () {
+                loadScripts(array, ++accumulator);
+            })
+        } else {
+            throw new Error('Invalid script.');
+        }
+    };
+    loadScripts(window.scripts);
+
     var postListElement = document.getElementById('post-list');
     if (postListElement) {
         $('.post-list-controls-button').click(function (event) {
@@ -29,21 +52,6 @@ $(document).ready(function () {
     var $body = $('body');
     if ($body.hasClass('post-template') || $body.hasClass('page-template')) {
         var $content = $('.content');
-
-        // Make all links open in new windows,
-        // except those prefixed with ~
-        // var $postContentLinks = $content.find('a');
-        // $.each($postContentLinks, function (index, link) {
-        //     var $link = $(link);
-        //     var text = $link.text();
-        //     var href = $link.attr('href');
-        //     if (/^~/.test(text)) {
-        //         $link.text(text.substr(1));
-        //     }
-        //     if (!/^#/.test(href)) {
-        //         $(link).attr('target', '_blank');
-        //     }
-        // });
 
         var $headings = $content.find('h1, h2');
         $.each($headings, function (index, heading) {

@@ -333,6 +333,9 @@ a {
       width: 100%;
       left: 0;
       top: 0; }
+  .content video {
+    display: block;
+    margin: 0 auto; }
 
 .end-of-article {
   margin: 48px 0;
