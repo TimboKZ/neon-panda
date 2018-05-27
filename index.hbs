@@ -1,0 +1,19 @@
+{{!< default}}
+
+<div class="container">
+    <div class="post-list">
+        {{#foreach posts}}
+            <div class="post-list-item-wrapper">
+                <a class="post-list-item" href="{{url}}">
+                    <div class="post-list-item-image"
+                         {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}
+                    ></div>
+                    <div class="post-list-item-info">
+                        <h1>{{title}} {{panda_excerpt}} test3</h1>
+                        <p>{{content words=50}}</p>
+                    </div>
+                </a>
+            </div>
+        {{/foreach}}
+    </div>
+</div>

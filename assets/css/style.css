@@ -1,0 +1,38 @@
+body {
+  background-color: #2b2b2b;
+  color: #e8fafd;
+  margin: 0; }
+
+.container {
+  max-width: 960px;
+  padding: 8px;
+  margin: 0 auto; }
+
+.post-list-item-wrapper {
+  padding: 8px; }
+
+.post-list-item {
+  padding-left: 300px;
+  text-decoration: none;
+  border: solid 2px #31393b;
+  position: relative;
+  display: block;
+  color: #e8fafd; }
+  .post-list-item:after {
+    display: table;
+    content: "";
+    clear: both; }
+  .post-list-item-image {
+    background: url("https://i.pinimg.com/originals/b1/05/99/b10599a726114edf0ace38c0403e84a3.jpg") center;
+    border-right: solid 2px #31393b;
+    background-size: cover;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0; }
+  .post-list-item-info {
+    padding: 8px; }
+    .post-list-item-info h1, .post-list-item-info p {
+      padding: 8px;
+      margin: 0; }

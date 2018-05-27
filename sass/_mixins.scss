@@ -1,0 +1,9 @@
+@import "config";
+
+@mixin clear-fix {
+    &:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+}

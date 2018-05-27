@@ -1,0 +1,36 @@
+{
+  "name": "neon-panda",
+  "version": "1.0.0",
+  "description": "Ghost CMS theme for foxypanda.me",
+  "main": "index.js",
+  "scripts": {
+    "watch": "gulp watch"
+  },
+  "config": {
+    "posts_per_page": 9999
+  },
+  "dependencies": {
+    "ghost-app": "0.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "engines": {
+    "ghost": "^1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimboKZ/neon-panda.git"
+  },
+  "author": {
+    "name": "Timur Kuzhagaliyev",
+    "email": "tim.kuzh@gmail.com",
+    "url": "https://foxypanda.me/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimboKZ/neon-panda/issues"
+  },
+  "homepage": "https://github.com/TimboKZ/neon-panda#readme"
+}

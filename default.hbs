@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>{{meta_title}}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200,300,600|Rajdhani:300,500" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset "js/prism/prism.css"}}"/>
+    <link rel="stylesheet" href="{{asset "css/style.css"}}"/>
+
+    <script>
+        window.scripts = [];
+    </script>
+
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+
+    {{{body}}}
+
+    {{> scripts}}
+
+    {{ghost_foot}}
+
+</body>
+
+</html>
