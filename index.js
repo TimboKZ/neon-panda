@@ -4,14 +4,22 @@
  * @license MIT
  */
 
-const App = require('ghost-app');
+var App = require('ghost-app');
 
-const NeonPandaApp = App.extend({
-    activate: () => {
+var NeonPandaApp = App.extend({
+    install: function () {
+    },
+    uninstall: function () {
+    },
+    activate: function () {
         console.log('Activating Neon Panda app.');
         this.ghost.helpers.register('panda_excerpt', this.pandaExcerpt);
     },
-    pandaExcerpt: () => 'Hello Pandas!',
+    deactivate: function () {
+    },
+    pandaExcerpt: function () {
+        return 'Hello Pandas!';
+    },
 });
 
 module.exports = NeonPandaApp;

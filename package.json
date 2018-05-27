@@ -6,6 +6,11 @@
   "scripts": {
     "watch": "gulp watch"
   },
+  "ghost": {
+    "permissions": {
+      "helpers": ["panda_excerpt"]
+    }
+  },
   "config": {
     "posts_per_page": 9999
   },
