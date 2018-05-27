@@ -18,7 +18,21 @@ var NeonPandaApp = App.extend({
     deactivate: function () {
     },
     pandaExcerpt: function () {
-        return 'Hello Pandas!';
+        var excerpt = content.toString().match(/<p>.*?<\/p>/gi);
+        var minLength = 20;
+        var maxLength = 50;
+        if (excerpt) {
+            var stripHtml = excerpt[0].replace(/<(?:.|\n)*?>/gm, '');
+            var words = stripHtml.split(' ');
+            var length = Math.min(maxLength, Math.max(minLength, Math.round(words.length)));
+            words = words.slice(0, length);
+            if (words.length === length && !/.*?[?!.]$/i.test(words[words.length - 1])) {
+                words[words.length - 1] = words[words.length - 1].replace(/[,;]$/gi, '') + '...';
+            }
+            return words.join(' ').trim();
+        } else {
+            return '';
+        }
     },
 });
 
