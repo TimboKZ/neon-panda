@@ -1,5 +1,61 @@
 {{!< default}}
 
+{{navigation}}
+
+
 {{#post}}
-    {{content}}
+    {{#unless page}}
+        <div class="container-paddingless">
+            <div class="meta-banner">
+                <div class="meta-banner-text">
+                    <div>
+                        <h1 class="meta-banner-title">{{title}}</h1>
+                        <p class="meta-banner-info">
+                            Published on <span>{{date published_at format="MMMM DD, YYYY"}}</span>
+                            {{#if tags}}under <span>{{tags.[0].name}}</span>{{/if}}
+                        </p>
+                    </div>
+                </div>
+                {{#if feature_image}}
+                    <div class="meta-banner-image">
+                        <img src="{{feature_image}}"/>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    {{/unless}}
+    <div class="content">
+        <div class="container">
+            {{content}}
+        </div>
+    </div>
+    <div class="container-paddingless">
+        {{#unless page}}
+            <div class="end-of-article">
+                <hr/>
+                <span>End of Article</span>
+            </div>
+            <div class="author">
+                {{#author}}
+                    <div class="author-image" style="background-image: url({{profile_image}})"></div>
+                    <h1 class="author-title">{{name}} <span>Author</span></h1>
+                    <p class="author-bio">{{bio}}</p>
+                    <div class="author-share">
+                        <div class="ssk-group ssk-count">
+                            <a href="" class="ssk ssk-facebook"></a>
+                            <a href="" class="ssk ssk-twitter"></a>
+                            <a href="" class="ssk ssk-google-plus"></a>
+                            <a href="" class="ssk ssk-pinterest"></a>
+                            <a href="" class="ssk ssk-linkedin"></a>
+                        </div>
+                    </div>
+
+                {{/author}}
+            </div>
+        {{/unless}}
+
+        <div class="comments">
+            {{> comments}}
+        </div>
+    </div>
 {{/post}}

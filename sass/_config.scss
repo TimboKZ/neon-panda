@@ -5,4 +5,8 @@ $fg: #e8fafd;
 $cyan: #25d7e5;
 $orange: #ff7959;
 
-$unit: 8px
+$unit: 8px;
+
+$mobile: "(max-width: 400px)";
+$tablet: "(min-width: 401px) and (max-width: 750px)";
+$desktop: "(min-width: 751px)";

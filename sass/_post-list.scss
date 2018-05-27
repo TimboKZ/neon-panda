@@ -1,0 +1,130 @@
+@import "config";
+
+.post-list {
+    &-controls {
+        padding: $unit * 1.5 $unit;
+        font-size: 0;
+        &-section {
+            padding: $unit $unit $unit 0;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        &-button {
+            @include reset-button;
+            @include transition;
+
+            padding: $unit * 0.5 $unit !important;
+            text-decoration: none !important;
+            border: solid 2px $mg !important;
+            font-size: 1rem !important;
+            margin: 0 $unit !important;
+
+            &.mixitup-control-active {
+                background-color: $mg;
+            }
+            &.filter-blog.mixitup-control-active {
+                color: $cyan !important;
+            }
+            &.filter-projects.mixitup-control-active {
+                color: $orange !important;
+            }
+            &:hover {
+                background-color: $mg;
+            }
+        }
+    }
+
+    &-item-wrapper {
+        padding: $unit * 1.5 $unit;
+    }
+    $image-width: 250px;
+    &-item {
+        @media #{$mobile} {
+            & {
+                padding-left: 0 !important;
+
+            }
+        }
+
+        padding-left: $image-width;
+        background-color: $bg;
+        text-decoration: none;
+        border: solid 2px $mg;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        color: $fg;
+        @include transition;
+        @include clear-fix;
+        &:hover {
+            background-color: $mg;
+        }
+        &:hover &-image {
+            -webkit-filter: none;
+            filter: none;
+        }
+        &-image {
+            @media #{$mobile} {
+                & {
+                    display: none;
+                }
+            }
+
+            background: url('https://i.pinimg.com/originals/b1/05/99/b10599a726114edf0ace38c0403e84a3.jpg') center;
+            border-right: solid 2px $mg;
+            background-size: cover;
+            width: $image-width;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            @include transition;
+
+            -webkit-filter: grayscale(0.9);
+            -webkit-filter: grayscale(90%);
+            filter: gray;
+            filter: grayscale(90%);
+        }
+        &:hover &-info-meta {
+            background-color: $bg;
+        }
+        &-info {
+            padding: $unit;
+            &-title, &-excerpt {
+                padding: $unit * 1.5 $unit * 2;
+                margin: 0;
+            }
+            &-title {
+                font-size: 1.4rem;
+                padding-bottom: 0;
+            }
+            &-meta {
+                padding: $unit * 0.25 $unit $unit * 0.4 $unit;
+                margin: $unit $unit * 2 $unit * 0.5;
+                background-color: $mg;
+                display: inline-block;
+                font-size: 0.8rem;
+            }
+            &-excerpt {
+                text-align: justify;
+            }
+        }
+        &.tag-projects:before {
+            background-color: $orange;
+        }
+        &.tag-blog:before {
+            background-color: $cyan;
+        }
+        &:before {
+            background-color: $mg;
+            transform: rotate(45deg);
+            right: -$unit * 2.5;
+            position: absolute;
+            top: -$unit * 2.5;
+            height: $unit * 4;
+            width: $unit * 4;
+            display: block;
+            content: '';
+        }
+    }
+}

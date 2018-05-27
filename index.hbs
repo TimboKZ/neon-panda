@@ -1,16 +1,27 @@
 {{!< default}}
 
+{{navigation}}
+
 <div class="container">
-    <div class="post-list">
+    <div class="post-list-controls">
+        <div class="post-list-controls-section">Show:</div>
+        <a class="post-list-controls-button" href="#everything" data-filter="*">Everything</a>
+        <a class="post-list-controls-button filter-projects" href="#projects" data-filter=".tag-projects">Projects</a>
+        <a class="post-list-controls-button filter-blog" href="#blog" data-filter=".tag-blog">Blog posts</a>
+    </div>
+    <div class="post-list" id="post-list">
         {{#foreach posts}}
-            <div class="post-list-item-wrapper">
-                <a class="post-list-item" href="{{url}}">
+            <div class="post-list-item-wrapper {{post_class}}">
+                <a class="post-list-item {{post_class}}" href="{{url}}">
                     <div class="post-list-item-image"
                          {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}
                     ></div>
                     <div class="post-list-item-info">
-                        <h1>{{title}} {{panda_excerpt}} test3</h1>
-                        <p>{{content words=50}}</p>
+                        <h1 class="post-list-item-info-title">{{title}}</h1>
+                        <p class="post-list-item-info-meta">
+                            Published on {{date published_at format="MMMM DD, YYYY"}}
+                        </p>
+                        <p class="post-list-item-info-excerpt">{{excerpt}}</p>
                     </div>
                 </a>
             </div>

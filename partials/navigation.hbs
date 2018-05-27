@@ -1,0 +1,14 @@
+<header class="header">
+    <div class="container">
+        <div class="header-left">
+            <a href="{{@blog.url}}" class="blog-title">
+                Foxy<span class="orange">Panda</span><span class="cyan">~</span>
+            </a>
+        </div>
+        <div class="header-right">
+            {{#foreach navigation}}
+                <a class="header-button {{#if current}}active{{/if}}" href="{{url}}">{{label}}</a>
+            {{/foreach}}
+        </div>
+    </div>
+</header>

@@ -1,0 +1,43 @@
+.header {
+    border-bottom: solid 2px $mg;
+    @include clear-fix;
+    &-left {
+        font-size: 0;
+        float: left;
+    }
+    &-right {
+        font-size: 0;
+        float: right;
+    }
+    &-button {
+        padding: $unit * 0.5 $unit;
+        margin: $unit * 0.5 $unit;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+        color: $fg;
+        @include transition;
+        &:hover {
+            background-color: $mg;
+        }
+        &.active {
+            background-color: $mg;
+            font-weight: bold;
+        }
+    }
+}
+
+.blog-title {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: $unit;
+    display: block;
+    color: $fg;
+    .orange {
+        color: $orange;
+    }
+    .cyan {
+        color: $cyan;
+    }
+}

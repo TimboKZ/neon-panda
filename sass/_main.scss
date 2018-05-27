@@ -1,47 +1,38 @@
 @import "config";
 @import "mixins";
 
-body {
-    background-color: $bg;
-    color: $fg;
+html, body {
+    @media #{$mobile} {
+        & {
+            font-size: 16px !important;
+        }
+    }
+
+    font-size: 18px;
     margin: 0;
+}
+
+body {
+    font-family: 'Assistant', sans-serif;
+    background-color: $bg;
+    font-size: 1rem;
+    color: $fg;
+}
+
+a {
+    text-decoration: none;
+    color: $cyan;
 }
 
 .container {
     max-width: 960px;
     padding: $unit;
     margin: 0 auto;
+    @include clear-fix;
 }
 
-.post-list {
-    &-item-wrapper {
-        padding: $unit;
-    }
-    $image-width: 300px;
-    &-item {
-        padding-left: $image-width;
-        text-decoration: none;
-        border: solid 2px $mg;
-        position: relative;
-        display: block;
-        color: $fg;
-        @include clear-fix;
-        &-image {
-            background: url('https://i.pinimg.com/originals/b1/05/99/b10599a726114edf0ace38c0403e84a3.jpg') center;
-            border-right: solid 2px $mg;
-            background-size: cover;
-            width: $image-width;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            top: 0;
-        }
-        &-info {
-            padding: $unit;
-            h1, p {
-                padding: $unit;
-                margin: 0;
-            }
-        }
-    }
+.container-paddingless {
+    max-width: 960px;
+    margin: 0 auto;
+    @include clear-fix;
 }
