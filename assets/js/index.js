@@ -64,6 +64,17 @@ $(document).ready(function () {
         });
     }
 
+    $('div.post-list-item-image-thumbnail').Lazy({
+        threshold: 2000,
+        thumbnailLoader: function(element) {
+            var bgUrl = element.data('bg');
+            if (bgUrl) {
+                element.css('background-image', 'url(' + bgUrl + ')')
+                element.addClass('loaded');
+            }
+        },
+    });
+
 });
 
 SocialShareKit.init();

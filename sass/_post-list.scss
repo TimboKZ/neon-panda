@@ -1,4 +1,5 @@
 @import "config";
+@import "mixins";
 
 .post-list {
     &-controls {
@@ -67,6 +68,22 @@
             @media #{$mobile} {
                 & {
                     display: none;
+                }
+            }
+
+            &-thumbnail {
+                background-position: center;
+                background-size: cover;
+                position: absolute;
+                opacity: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                top: 0;
+                @include transition(all, 300ms);
+
+                &.loaded {
+                    opacity: 1;
                 }
             }
 

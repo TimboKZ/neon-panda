@@ -13,9 +13,10 @@
         {{#foreach posts}}
             <div class="post-list-item-wrapper {{post_class}}">
                 <a class="post-list-item {{post_class}}" href="{{url}}">
-                    <div class="post-list-item-image"
-                         {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}
-                    ></div>
+                    <div class="post-list-item-image">
+                        <div class="post-list-item-image-thumbnail"  data-loader="thumbnailLoader"
+                         {{#if feature_image}}data-bg="{{feature_image}}"{{/if}}></div>
+                    </div>
                     <div class="post-list-item-info">
                         <h1 class="post-list-item-info-title">{{title}}</h1>
                         <p class="post-list-item-info-meta">
