@@ -24,7 +24,7 @@ $(document).ready(function () {
         } else if (typeof script === 'string') {
             $.getScript(script, function () {
                 loadScripts(array, ++accumulator);
-            })
+            });
         } else {
             throw new Error('Invalid script.');
         }
@@ -66,12 +66,16 @@ $(document).ready(function () {
 
     $('div.post-list-item-image-thumbnail').Lazy({
         threshold: 2000,
-        thumbnailLoader: function(element) {
+        thumbnailLoader: function (element) {
             var bgUrl = element.data('bg');
-            if (bgUrl) {
-                element.css('background-image', 'url(' + bgUrl + ')')
+            if (!bgUrl) return;
+
+            var image = new Image();
+            image.onload = function () {
+                element.css('background-image', 'url(' + bgUrl + ')');
                 element.addClass('loaded');
-            }
+            };
+            image.src = bgUrl;
         },
     });
 

@@ -181,11 +181,11 @@ a {
       right: 0;
       left: 0;
       top: 0;
-      -webkit-transition: all 300ms ease-in-out;
-      -moz-transition: all 300ms ease-in-out;
-      -ms-transition: all 300ms ease-in-out;
-      -o-transition: all 300ms ease-in-out;
-      transition: all 300ms ease-in-out; }
+      -webkit-transition: all 400ms ease-in-out;
+      -moz-transition: all 400ms ease-in-out;
+      -ms-transition: all 400ms ease-in-out;
+      -o-transition: all 400ms ease-in-out;
+      transition: all 400ms ease-in-out; }
       .post-list-item-image-thumbnail.loaded {
         opacity: 1; }
   .post-list-item:hover .post-list-item-info-meta {
