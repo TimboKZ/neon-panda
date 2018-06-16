@@ -65,7 +65,7 @@ $(document).ready(function () {
     }
 
     $('div.post-list-item-image-thumbnail').Lazy({
-        threshold: 2000,
+        threshold: 800,
         thumbnailLoader: function (element) {
             var bgUrl = element.data('bg');
             if (!bgUrl) return;
