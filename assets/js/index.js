@@ -8,8 +8,8 @@ Prism.plugins.autoloader.languages_path = '/assets/js/prism/components/';
 
 $(document).ready(function () {
 
-    // Load the scripts and execute functions
-    // defined in the post body
+    // Load the scripts and execute functions defined in the post body.
+    // This part is here for legacy support, use code injection instead in Ghost v1+
     var loadScripts = function (array, accumulator) {
         if (!accumulator) {
             accumulator = 0;
@@ -47,6 +47,21 @@ $(document).ready(function () {
             },
         });
         mixer.filter('*');
+
+        $('div.post-list-item-image-thumbnail').Lazy({
+            threshold: 800,
+            thumbnailLoader: function (element) {
+                var bgUrl = element.data('bg');
+                if (!bgUrl) return;
+
+                var image = new Image();
+                image.onload = function () {
+                    element.css('background-image', 'url(' + bgUrl + ')');
+                    element.addClass('loaded');
+                };
+                image.src = bgUrl;
+            },
+        });
     }
 
     var $body = $('body');
@@ -62,22 +77,17 @@ $(document).ready(function () {
             $heading.addClass('anchor');
             $heading.prepend('<a class="heading-anchor" href="#' + id + '">' + symbol + '</a> &nbsp;');
         });
+
+        var $images = $content.find('p > img');
+        $.each($images, function (index, image) {
+            var $image = $(image);
+            var title = $image.attr('title');
+            if (title) {
+                $image.wrap('<figure></figure>');
+                $image.after('<caption>' + title + '</caption>');
+            }
+        });
     }
-
-    $('div.post-list-item-image-thumbnail').Lazy({
-        threshold: 800,
-        thumbnailLoader: function (element) {
-            var bgUrl = element.data('bg');
-            if (!bgUrl) return;
-
-            var image = new Image();
-            image.onload = function () {
-                element.css('background-image', 'url(' + bgUrl + ')');
-                element.addClass('loaded');
-            };
-            image.src = bgUrl;
-        },
-    });
 
 });
 

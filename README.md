@@ -27,7 +27,7 @@ a ZIP archive using the appropriate button above and import it into your Ghost s
 ## Initial setup
 
 By default, Neon Panda supports only two tags: **Blog** (`blog`) and **Projects** (`projects`). The images below show
-how the tags should be setup.
+how the tags should be set up.
 
 
 | 1. Create the tags in your Ghost settings | 2. Add a tag to your post            | 3. Use filter buttons to show/hide posts |
@@ -69,6 +69,10 @@ syntax higlighting for inline code you can use something like `<code class="lang
 You can add inline LaTeX snippets using `$ ... $` syntax, e.g. `$ \sum_{i=0}^n i^2 $`. To render the equation on a new
 line, use the `$$ ... $$` environment.
 
+## Image captions
+
+You can add a caption to an image by specifying its title. For example, in `![Picture of a cat](./cat.jpg "This is my
+cat Lucy!")`, `This is my cat Lucy!` will be displayed as the caption below the image.
 
 # Extending this theme
 

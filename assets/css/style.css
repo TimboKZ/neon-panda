@@ -297,6 +297,12 @@ a {
     max-width: 100%;
     display: block;
     margin: 0 auto; }
+  .content figure caption {
+    margin: 10px 0;
+    display: block; }
+    .content figure caption:before {
+      content: 'Caption: ';
+      color: #25d7e5; }
   .content *:not(pre) > code:not(.synlighter-syntax-code) {
     padding: 2px 4px;
     font-size: 0.8rem !important;

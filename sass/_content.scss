@@ -100,6 +100,17 @@
         display: block;
         margin: 0 auto;
     }
+    figure {
+        caption {
+            margin: 10px 0;
+            display: block;
+
+            &:before {
+                content: 'Caption: ';
+                color: $cyan;
+            }
+        }
+    }
     *:not(pre) > code:not(.synlighter-syntax-code) {
         padding: $unit * 0.25 $unit * 0.5;
         font-size: 0.8rem !important;

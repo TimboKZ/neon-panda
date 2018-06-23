@@ -16,20 +16,20 @@ gulp.task('sass', () => {
         .pipe(gulp.dest('./assets/css'));
 });
 
-gulp.task('compress-css', ['sass'], () => {
-    gulp.src('assets/css/style.css')
+gulp.task('compress-css', () => {
+    return gulp.src('assets/css/style.css')
         .pipe(rename({suffix: '.min'}))
         .pipe(cleanCSS({}))
         .pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('compress-js', () => {
-    gulp.src('assets/js/index.js')
+    return gulp.src('assets/js/index.js')
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('assets/js'));
 });
 
 gulp.task('watch', () => {
-    gulp.watch('./sass/**/*.scss', ['sass', 'compress-css']);
+    gulp.watch('./sass/**/*.scss', gulp.series('sass', 'compress-css'));
 });
