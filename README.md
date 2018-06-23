@@ -5,9 +5,9 @@
 **Features**:
 
 - Uses a strict 5-component colour scheme:
-    - ![#2b2b2b](https://placehold.it/15/2b2b2b/000000?text=+) `#2b2b2b` Foreground
+    - ![#2b2b2b](https://placehold.it/15/2b2b2b/000000?text=+) `#2b2b2b` Background
     - ![#31393b](https://placehold.it/15/31393b/000000?text=+) `#31393b` Middleground
-    - ![#e8fafd](https://placehold.it/15/e8fafd/000000?text=+) `#e8fafd` Background
+    - ![#e8fafd](https://placehold.it/15/e8fafd/000000?text=+) `#e8fafd` Foreground
     - ![#25d7e5](https://placehold.it/15/25d7e5/000000?text=+) `#25d7e5` Cyan
     - ![#ff7959](https://placehold.it/15/ff7959/000000?text=+) `#ff7959` Orange
 - Defines styles for the index view, post view and a page view.
@@ -17,6 +17,7 @@
 - Supports responsive images, works well on mobile!
 - Supports syntax highlighting via [Prism](https://prismjs.com/).
 - Supports inline LaTeX via [MathJax](https://www.mathjax.org/).
+- Adds social media buttons and [Disqus](https://disqus.com/) comments to all posts.
 
 # Using this theme
 
@@ -40,6 +41,33 @@ the following line:
 ```html
 <a class="post-list-controls-button" href="#gallery" data-filter=".tag-gallery">Galleries</a>
 ```
+
+Finally, to enable comments, you'll need to register your site on [Disqus](https://disqus.com/) and edit
+`partials/comments.hbs` accordingly.
+
+## Analytics
+
+This templates doesn't support any analytics tools. If you want to use, say, Google Analytics, you can use the *Code
+Injection* feature (check your Ghost Admin sidebar for the relevant section).
+
+## Code and syntax highlighting
+
+To add code snippets with syntax highlighting, you can use the standard Markdown syntax, adding language as follows:
+
+```
+\```javascript
+// This code will be highlighted.
+const hello = 'world';
+\```
+```
+
+Of course, if you use Markdown inline code snippets (i.e. `\`monospace\``) no syntax highlighting will occur. To get
+syntax higlighting for inline code you can use something like `<code class="language-javascript">const num = 3;</code>`.
+
+## Inline LaTeX
+
+You can add inline LaTeX snippets using `$ ... $` syntax, e.g. `$ \sum_{i=0}^n i^2 $`. To render the equation on a new
+line, use the `$$ ... $$` environment.
 
 
 # Extending this theme
