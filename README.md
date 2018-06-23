@@ -12,9 +12,10 @@ a ZIP archive using the appropriate button above and import it into your Ghost s
 By default, Neon Panda supports only two tags: **Blog** (`blog`) and **Projects** (`projects`). The images below show
 how the tags should be setup.
 
-1. Create the tags in your Ghost settings | 2. Add a tag to your post | 3. Use filter buttons to show/hide posts
-:---:|:---:|:---:
-![](./demo/neon-panda-tags-settings.jpg) | ![](./demo/neon-panda-tags-post.jpg) | ![](./demo/neon-panda-tags-ui.jpg)
+
+| 1. Create the tags in your Ghost settings | 2. Add a tag to your post            | 3. Use filter buttons to show/hide posts |
+|-------------------------------------------|--------------------------------------|------------------------------------------|
+| ![](./demo/neon-panda-tags-settings.jpg)  | ![](./demo/neon-panda-tags-post.jpg) | ![](./demo/neon-panda-tags-ui.jpg)       |
 
 If you want to define custom tags, you'll have to edit `index.hbs`. The filter buttons are defined inside the
 `div.post-list-controls` container. For example, if you'll create a new tag **Gallery** (`gallery`), you'll have to add
